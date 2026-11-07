@@ -1,5 +1,7 @@
 #include"../include/GameManager.h"
 #include<stdio.h>
+#include<stdlib.h>
+
 #ifdef linux
     #include<unistd.h>
 #endif
@@ -21,7 +23,8 @@ int main(void)
     }
 
     printf("\033[HSCORE J1: %d   SCORE J2: %d\n", game->p1Score,game->p2Score);
-    
+
     RemadeConsoleNormal();
+    free(game);
     return 0;
 }
